@@ -9,14 +9,18 @@ import (
 type handler func(ctx context.Context, msg interface{}) (interface{}, error)
 
 // Mediator is a simple implementation of the mediator pattern
-type Mediator struct {
+type Mediator interface {
+	// Send delegates a message to the appropriate handler
+	Send(ctx context.Context, msg interface{}) (res interface{}, err error)
+}
+type mediator struct {
 	handlers map[reflect.Type]handler
 }
 
 // New creates a new mediator with the options set
-func New(options ...Option) (*Mediator, error) {
+func New(options ...Option) (Mediator, error) {
 
-	m := &Mediator{
+	m := &mediator{
 		handlers: make(map[reflect.Type]handler),
 	}
 
@@ -33,16 +37,12 @@ func New(options ...Option) (*Mediator, error) {
 	return m, nil
 }
 
-// Send delegates a message to the appropriate handler
-func (m Mediator) Send(
-	ctx context.Context,
-	message interface{},
-) (response interface{}, err error) {
+func (m mediator) Send(ctx context.Context, msg interface{}) (interface{}, error) {
 
-	h, ok := m.handlers[typeOf(message)]
+	h, ok := m.handlers[typeOf(msg)]
 	if !ok {
 		return nil, ErrHandlerNotFound
 	}
 
-	return h(ctx, message)
+	return h(ctx, msg)
 }

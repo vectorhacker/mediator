@@ -7,12 +7,12 @@ import (
 )
 
 // Option is a function that modifies the mediator with certain options
-type Option func(*Mediator) error
+type Option func(*mediator) error
 
 // WithHandlerFunc adds a handler func which takes two arguments, a context
 // and a message.
 func WithHandlerFunc(f interface{}) Option {
-	return func(m *Mediator) error {
+	return func(m *mediator) error {
 		t := typeOf(f)
 		if t.Kind() != reflect.Func {
 			return fmt.Errorf("handler func must be a function")
@@ -42,7 +42,7 @@ func WithHandlerFunc(f interface{}) Option {
 // a handler must have an Handle method with two arguments
 // and two return values
 func WithHandler(h interface{}) Option {
-	return func(m *Mediator) error {
+	return func(m *mediator) error {
 		t := typeOf(h)
 		method, ok := t.MethodByName("Handle")
 		if !ok {
