@@ -3,6 +3,8 @@
 Simple mediator implementation for Go
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/vectorhacker/mediator)](https://goreportcard.com/report/github.com/vectorhacker/mediator)
+![Coverage](https://img.shields.io/badge/Coverage-100.0%25-brightgreen)
+[![Go](https://github.com/vectorhacker/mediator/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/vectorhacker/mediator/actions/workflows/go.yml)
 
 Example 
 
