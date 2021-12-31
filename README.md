@@ -13,7 +13,7 @@ Example
 type MessageHandler struct{}
 
 type Message struct {
-	Foo string
+    Foo string
 }
 
 type Response struct {
@@ -21,8 +21,7 @@ type Response struct {
 }
 
 func (h MessageHandler) Handle(ctx context.Context, msg *Message) (Response, error) {
-
-	return Response{ msg.Foo + " bar "}, nil
+    return Response{ msg.Foo + " bar "}, nil
 }
 
 
