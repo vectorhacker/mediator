@@ -2,6 +2,7 @@
 
 Simple mediator implementation for Go
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/vectorhacker/mediator)](https://goreportcard.com/report/github.com/vectorhacker/mediator)
 
 Example 
 
