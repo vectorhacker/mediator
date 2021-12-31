@@ -1,5 +1,4 @@
 # mediator
-[![coverage report](https://gitlab.com/emirot.nolan/vectorhacker/mediator/master/coverage.svg)](https://gitlab.com/vectorhacker/mediator/-/commits/master)
 
 Simple mediator implementation for Go
 
