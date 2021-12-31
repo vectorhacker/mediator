@@ -6,6 +6,7 @@ import (
 	"reflect"
 )
 
+// Option is a function that modifies the mediator with certain options
 type Option func(*Mediator) error
 
 // WithHandlerFunc adds a handler func which takes two arguments, a context
