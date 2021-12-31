@@ -1,4 +1,6 @@
 # mediator
+[![coverage report](https://gitlab.com/emirot.nolan/go-test-coverage/badges/master/coverage.svg)](https://gitlab.com/emirot.nolan/go-test-coverage/-/commits/master)
+
 Simple mediator implementation for Go
 
 
